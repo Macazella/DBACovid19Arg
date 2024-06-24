@@ -144,8 +144,83 @@ Este script crea un usuario con el nombre de usuario m.j.cazella, un correo elec
 
 Siguiendo estos pasos, podrás crear y gestionar usuarios en tu instancia de Oracle Apex de manera efectiva.
 
+2. 
 3. *Configurar la Base de Datos*:
-    - Ejecuta los scripts SQL proporcionados en el repositorio para crear las tablas y cargar los datos iniciales.
+    - Ejecuta los scripts SQL proporcionados en el repositorio para crear las tablas y cargar los datos iniciales. (IN PROGRESS)
+  
+4.  4. Procedimientos Almacenados y Triggers
+Crea un archivo procedures_and_triggers.sql en el directorio scripts.
+
+sql
+-- procedures_and_triggers.sql
+
+DELIMITER //
+
+CREATE PROCEDURE obtener_prestamos_por_usuario (IN user_id INT)
+BEGIN
+    SELECT l.titulo, p.fecha_prestamo, p.fecha_devolucion
+    FROM prestamos p
+    JOIN libros l ON p.libro_id = l.id
+    WHERE p.usuario_id = user_id;
+END //
+
+DELIMITER ;
+
+CREATE TRIGGER actualizar_fecha_devolucion
+AFTER UPDATE ON prestamos
+FOR EACH ROW
+BEGIN
+    IF NEW.fecha_devolucion IS NOT NULL THEN
+        INSERT INTO historial_prestamos (prestamo_id, fecha_devolucion)
+        VALUES (NEW.id, NEW.fecha_devolucion);
+    END IF;
+END;
+
+5. Consultas Complejas y Optimización
+Agrega un archivo complex_queries.sql en el directorio scripts.
+
+sql
+-- complex_queries.sql
+
+-- Consulta para encontrar los libros más prestados
+SELECT l.titulo, COUNT(p.id) AS numero_prestamos
+FROM prestamos p
+JOIN libros l ON p.libro_id = l.id
+GROUP BY l.titulo
+ORDER BY numero_prestamos DESC
+LIMIT 10;
+
+-- Índice para optimizar las consultas de préstamos por usuario
+CREATE INDEX idx_usuario_id ON prestamos(usuario_id);
+
+6.  Respaldo y Restauración
+Documenta cómo realizar un respaldo y restauración de la base de datos en el README.md.
+
+markdown
+## Respaldo y Restauración
+
+### Respaldo
+Para hacer un respaldo de la base de datos, usa el siguiente comando:
+
+bash
+mysqldump -u [usuario] -p[contraseña] nombre_base_de_datos > respaldo.sql
+
+
+### Restauración
+Para restaurar la base de datos desde un archivo de respaldo:
+
+bash
+mysql -u [usuario] -p[contraseña] nombre_base_de_datos < respaldo.sql
+```
+```
+
+## Links de descargas de las bases de datos utilizadas:
+- http://datos.salud.gob.ar/dataset?q=covid&sort=metadata_modified+desc (principal)
+- Tablas: http://datos.salud.gob.ar/dataset/vacunas-contra-covid-19-dosis-aplicadas-en-la-republica-argentina
+http://datos.salud.gob.ar/dataset/vacunas-contra-covid19-dosis-aplicadas-en-la-republica-argentina
+http://datos.salud.gob.ar/dataset/covid-19-casos-registrados-en-la-republica-argentina
+http://datos.salud.gob.ar/dataset/dosis-aplicadas-a-nivel-nacional
+
 
 ## Contribuciones
 
