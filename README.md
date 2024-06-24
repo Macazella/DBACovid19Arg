@@ -1,7 +1,4 @@
 # DBACovid19Arg
-DB creada a partir de bases de datos del Ministerio de Salud de Argentina
-# DBACovid19Arg
-
 Este repositorio contiene el modelo de base de datos para el seguimiento del COVID-19 en Argentina. El modelo ha sido creado y gestionado utilizando Oracle Apex. A continuación, se presenta una descripción detallada del proyecto y sus componentes.
 
 ## Descripción del Proyecto
@@ -143,12 +140,11 @@ END;
 Este script crea un usuario con el nombre de usuario m.j.cazella, un correo electrónico magali@example.com y una contraseña temporal temporalPassword123. El usuario deberá cambiar la contraseña la primera vez que inicie sesión y se le otorgan privilegios de administrador.
 
 Siguiendo estos pasos, podrás crear y gestionar usuarios en tu instancia de Oracle Apex de manera efectiva.
-
-2. 
-3. *Configurar la Base de Datos*:
+ 
+2. *Configurar la Base de Datos*:
     - Ejecuta los scripts SQL proporcionados en el repositorio para crear las tablas y cargar los datos iniciales. (IN PROGRESS)
-  
-4.  4. Procedimientos Almacenados y Triggers
+
+3. Procedimientos Almacenados y Triggers
 Crea un archivo procedures_and_triggers.sql en el directorio scripts.
 
 sql
@@ -193,7 +189,7 @@ LIMIT 10;
 -- Índice para optimizar las consultas de préstamos por usuario
 CREATE INDEX idx_usuario_id ON prestamos(usuario_id);
 
-6.  Respaldo y Restauración
+4.  Respaldo y Restauración
 Documenta cómo realizar un respaldo y restauración de la base de datos en el README.md.
 
 markdown
