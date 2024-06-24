@@ -155,7 +155,8 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issu
 
 Para cualquier consulta o colaboración, puedes contactarme a través de:
 
-- *Email*: magali@example.com
-- *LinkedIn*: [Tu Perfil de LinkedIn](https://www.linkedin.com/in/tuusuario)
+- *Email*: magalicazellam@GMAIL.COM.com
+- *LinkedIn*: https://www.linkedin.com/in/magali-cazella-mendez/
+- *Instagram*: https://www.instagram.com/magali.cm22?igsh=NTRrdTUzZzhhaHM1 
 
 ¡Gracias por tu interés en el proyecto!
