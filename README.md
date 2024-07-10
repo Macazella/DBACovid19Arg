@@ -50,7 +50,7 @@ Esta tabla registra el total de casos confirmados:
 
 - *Anaconda*: Para la creación y gestión del modelo de base de datos.
 - *PostgreSQL*: Para la consulta y manipulación de datos.
-- *PL/SQL*: Para procedimientos almacenados y funciones.
+- *pgAdmin.PL/SQL*: Para procedimientos almacenados y funciones.
 
 ## Cómo Empezar
 
@@ -58,17 +58,21 @@ Esta tabla registra el total de casos confirmados:
     sh
     git clone https://github.com/Macazella/DBACovid19Arg.git
     
-2. Leer GUIA ANACONDA-JUPYTERLAB-PYTHON3
+2. Leer 1.GUIA ANACONDA-JUPYTERLAB-PYTHON3
 3. Realizar los pasos en los siguientes archivos (en orden):
    - 2. Paso a paso para carga, limpieza, modelado y guardado de Ambulatorios
    - 3. Paso a paso para carga, limpieza, modelado y guardado de Internados y fallecidos
    - 4. Paso a paso para cargar, limpiar, modelar y guardar CasosCovid19
    - 5. Descarga de archivos csv limpios
 
-4. *Configurar la Base de Datos* (IN PROGRESS):
+4. *Configurar la Base de Datos* PostgreSQL/pgAdmin4:
+   - 0. Instalación de PostgreSQL y pgAdmin 4
+     1. Tablas y relaciones
+     2. SQL pgAdmin scripts para importar csv
+     3. Devolver las relaciones y restricciones de las tablas
+   
   
-
-3. Procedimientos Almacenados y Triggers
+3. Procedimientos Almacenados y Triggers (IN PROGRESS)
 Crea un archivo procedures_and_triggers.sql en el directorio scripts.
 
 sql
