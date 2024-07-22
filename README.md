@@ -170,7 +170,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issu
 
 Para cualquier consulta o colaboración, puedes contactarme a través de:
 
-- *Email*: magalicazellam@GMAIL.COM.com
+- *Email*: magalicazellam@gmail.com
 - *LinkedIn*: https://www.linkedin.com/in/magali-cazella-mendez/
 - *Instagram*: https://www.instagram.com/magali.cm22?igsh=NTRrdTUzZzhhaHM1 
 
