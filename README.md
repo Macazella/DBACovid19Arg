@@ -9,6 +9,23 @@ El objetivo de este proyecto es consolidar y analizar datos relacionados con la 
 - *Casos Internados y Fallecidos*: Información sobre casos severos que resultaron en hospitalización o fallecimiento.
 - *Total de Casos Confirmados*: Contabilización de todos los casos confirmados de COVID-19.
 
+Aquí estoy gestionando un repositorio donde se indica el paso a paso sobre cómo descargar las bases de datos públicas del Ministerio de salud sobre el estado, registro y avance de casos durante el período 2020-2022 del SarsCov2 en la República Argentina.
+Luego se indica cómo procesar las planillas csv en Python utilizando JupyterLab, importando NunPy y pandas para el análisis de la calidad de los datos, estadística, limpieza, unificación y modelado de las tablas a fin de luego poder ingresarlas en PostgreSQL.
+
+Una vez realizados estos pasos, se importan en .zip los csv ya listos para incorporar a las tablas creadas en pgAdmin de PostgreSQL. Se brindan las sentencias necesarias para la creacion de usuario en Postgre, base de datos, DER, relaciones y constraints que luego de importar cada csv correspondinte a su tabla se insertarán para luego poder realizar análisis de los datos en esta gran base de datos.
+
+Luego se utilizará Tableau para brindar en un dashbord la correspondiente visualización del análisis correspondiente a las siguientes preguntas que formarán parte de la hipótesis:
+
+Analisis potencial de casos:
++Distribución covid por provincia
++Diferencia entre ciudades y pueblos: cantidad y fecha de registros
++Provincias con mayor cantidad de casos registrados
++Diferencias entre cantidad de casos ambulatorios e internados
++Mayor pico de casos en total (fecha)
++Provincias con menor cantidad de registros: hay bias por falta de recopilación de datos?
+
+
+
 1) Modelo de Base de Datos
 
 El modelo de base de datos incluye las siguientes tablas principales:
