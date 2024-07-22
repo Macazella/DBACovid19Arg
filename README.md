@@ -68,6 +68,8 @@ Esta tabla registra el total de casos confirmados:
 - *Anaconda*: Para la creación y gestión del modelo de base de datos.
 - *PostgreSQL*: Para la consulta y manipulación de datos.
 - *pgAdmin.PL/SQL*: Para procedimientos almacenados y funciones.
+- Gitbash
+- DockerHub
 
 ## Cómo Empezar
 
@@ -159,6 +161,50 @@ mysql -u [usuario] -p[contraseña] nombre_base_de_datos < respaldo.sql
 - http://datos.salud.gob.ar/dataset?q=covid&sort=metadata_modified+desc (principal)
 - DATABASES:
 http://datos.salud.gob.ar/dataset/covid-19-casos-registrados-en-la-republica-argentina
+
+---
+
+## Descarga del Archivo `.zip` desde Docker Hub
+
+Para descargar el archivo `csv_archivos_limpios.zip` desde Docker Hub y asegurarte de que el contenedor no se elimine automáticamente, sigue estos pasos:
+
+1. **Instala Docker**
+
+   Si aún no tienes Docker instalado, puedes descargarlo e instalarlo desde [Docker Desktop](https://www.docker.com/products/docker-desktop).
+
+2. **Descarga la Imagen Docker**
+
+   Abre tu terminal (CMD, PowerShell o Git Bash) y ejecuta el siguiente comando para descargar la imagen Docker:
+
+   ```sh
+   docker pull macazella/csv_archivos_limpios
+   ```
+
+3. **Ejecuta el Contenedor y Copia el Archivo**
+
+   Para copiar el archivo `csv_archivos_limpios.zip` desde el contenedor a tu máquina local sin eliminar el contenedor, usa el siguiente comando:
+
+   ```sh
+   docker run -v /ruta/local/de/descarga:/output macazella/csv_archivos_limpios sh -c "cp /csv_archivos_limpios.zip /output/"
+   ```
+
+   Reemplaza `/ruta/local/de/descarga` con la ruta del directorio en tu máquina local donde deseas guardar el archivo.
+
+4. **Verifica el Archivo Copiado**
+
+   Después de ejecutar el comando, verifica en la ruta local especificada que el archivo `csv_archivos_limpios.zip` ha sido copiado.
+
+---
+
+### Notas Adicionales
+
+- **Ruta del Directorio Local**: Asegúrate de que la ruta del directorio local en el comando esté correctamente especificada y que el directorio exista antes de ejecutar el comando.
+- **Permisos**: Asegúrate de que Docker tenga los permisos necesarios para acceder a la ruta del directorio local.
+- **Ejemplo de Comando en Git Bash**: Si estás usando Git Bash, la ruta del directorio debe especificarse en formato de estilo Unix. Ejemplo: `/c/Downloads/csv_test`.
+
+---
+
+Con estas instrucciones, el archivo `csv_archivos_limpios.zip` debería permanecer en el contenedor después de ejecutar el comando, y podrás copiarlo a tu máquina local sin que el contenedor sea eliminado automáticamente. 
 
 
 
